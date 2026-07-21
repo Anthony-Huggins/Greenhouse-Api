@@ -2,9 +2,6 @@ from pydantic import BaseModel, ConfigDict, EmailStr, Field
 from datetime import datetime
 from typing import Literal
 
-
-Status = Literal["thriving", "stable", "struggling", "dormant", "dead"]
-
 class Caretaker(BaseModel):
     """Pydantic class representing a single caretaker that works at the greenhouse
     

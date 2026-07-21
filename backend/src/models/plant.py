@@ -16,7 +16,7 @@ class Plant(BaseModel):
         nickname: str - Plant's Nickname
         pot_size: int - Size of the pot in cm
         acquisiton_date: datetime - When this plant was aquired
-        health_status: str - The health status of a plant. Can be: 'thriving', 'stable', 'struggling', 'dormant', 'dead'"
+        health_status: str - The health status of a plant. Can be: ['thriving', 'stable', 'struggling', 'dormant', 'dead']"
         created_at: datetime - When this plant was regested in the system
         updated_at: datetime - When this plant was last updated
     """

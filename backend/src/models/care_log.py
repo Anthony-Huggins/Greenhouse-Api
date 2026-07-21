@@ -1,0 +1,29 @@
+from pydantic import BaseModel, ConfigDict, EmailStr, Field
+from datetime import datetime
+from typing import Literal
+from models import Status
+
+Care_Types = Literal["watered", "fertilized", "repotted", "pruned", "pest_treatment", "observation"]
+
+class Care_Log(BaseModel):
+    """Pydantic class representing a single care log
+    
+    Must have ONLY the follwing fields:
+        id: int - The ID for the plant in the database.
+        caretaker_id: int - The id of the caretaker that did this care_log 
+        care_type: str - type of care. options: ['watered', 'fertilized', 'repotted', 'pruned', 'pest_treatment', 'observation']
+        notes: str - Any aditional notes the caretaker has
+        created_at: datetime - When this caretaker was regested in the system
+        updated_at: datetime - When this caretaker was last updated
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+
+    id: int = Field(description="SQLite Care_LogID")
+    caretaker_id: int = Field(description="SQLite caretaker ID")
+    care_type: Care_Types = Field(description="type of care. options: 'watered', 'fertilized', 'repotted', 'pruned', 'pest_treatment', 'observation'")
+    notes: str = Field(default="", description="Notes for this care log")
+    created_at: datetime = Field(description="When this plant was regested in the system")
+    updated_at: datetime = Field(description="When this plant was last updated")
+  
