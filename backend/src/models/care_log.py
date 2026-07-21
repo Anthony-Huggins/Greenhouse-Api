@@ -13,8 +13,9 @@ class Care_Log(BaseModel):
         caretaker_id: int - The id of the caretaker that did this care_log 
         care_type: str - type of care. options: ['watered', 'fertilized', 'repotted', 'pruned', 'pest_treatment', 'observation']
         notes: str - Any aditional notes the caretaker has
-        created_at: datetime - When this caretaker was regested in the system
-        updated_at: datetime - When this caretaker was last updated
+        date_of_care: datetime - When the care happened (editable)
+        created_at: datetime - When this care_log was created
+        updated_at: datetime - When this care_log was last updated
     """
 
     model_config = ConfigDict(extra="forbid")
@@ -24,6 +25,7 @@ class Care_Log(BaseModel):
     caretaker_id: int = Field(description="SQLite caretaker ID")
     care_type: Care_Types = Field(description="type of care. options: 'watered', 'fertilized', 'repotted', 'pruned', 'pest_treatment', 'observation'")
     notes: str = Field(default="", description="Notes for this care log")
+    date_of_care: datetime = Field(description="When the care happened (editable)")
     created_at: datetime = Field(description="When this care_log was created")
     updated_at: datetime = Field(description="When this care_log was last updated")
   
