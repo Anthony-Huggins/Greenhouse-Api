@@ -20,7 +20,7 @@ class Location(BaseModel):
 
     id: int = Field(description="SQLite Care_LogID")
     greenhouse_id: int = Field(description="SQLite greenhouse id")
-    plant_id: int = Field(description="SQLite plant id")
+    plant_id: int | None = Field(default=None, description="SQLite plant id")
     row_number: int = Field(description="The row number the location is at in the greenhouse")
     spot_number: int = Field(description="the spot number the location is at withen the row")
     created_at: datetime = Field(description="When this care_log was created")
