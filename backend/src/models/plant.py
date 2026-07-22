@@ -11,8 +11,6 @@ class Plant(BaseModel):
     Must have ONLY the follwing fields:
         id: int - The ID for the plant in the database.
         species_id: int - The id of the species that the plant is 
-        care_log_ids: List[int] - list of ids of all the care logs for this plant
-        location_id: int - The ID of the location the plant currently is or None if not planted
         nickname: str - Plant's Nickname
         pot_size: int - Size of the pot in cm
         acquisiton_date: datetime - When this plant was aquired
@@ -26,8 +24,6 @@ class Plant(BaseModel):
 
     id: int = Field(description="SQLite SpeciesID")
     species_id: int = Field(description="SQLite PlantID")
-    care_log_ids: list[int] = Field(default_factory=list, description="list of ids of the care events")
-    location_id: int | None = Field(default=None, description="SQLite LocationID")
     nickname: str = Field(default="", max_length=50, min_length="1")
     pot_size: int | None = Field(default=None, description="Pot size in cm")
     acquisiton_date: datetime = Field(description="When this plant was aquired")
