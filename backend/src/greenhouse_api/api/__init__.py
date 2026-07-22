@@ -2,6 +2,8 @@ from flask import Flask, g
 from pathlib import Path
 import os
 from greenhouse_api.logging import configure_logging
+from greenhouse_api.api.errors import register_error_handlers
+from greenhouse_api.api.middleware import register_request_logging
 
 _DEFAULT_DB_PATH = (
     Path(__file__).resolve().parent.parent.parent.parent / "greenhouse.db"
@@ -25,8 +27,8 @@ def create_app(db_path: Path | str | None = None) -> Flask:
     #app.register_blueprint(ticket_bp, url_prefix="/tickets") # localhost:5000/tickets
     # url_prefix defines what the routes for this registration start with
 
-    #register_error_handlers(app)
-    #register_request_logging(app)
+    register_error_handlers(app)
+    register_request_logging(app)
 
     @app.teardown_appcontext
     def _close_db(_exc): # function that will close db connction when app is closed.
