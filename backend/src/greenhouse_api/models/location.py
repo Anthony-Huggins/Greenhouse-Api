@@ -7,6 +7,7 @@ class Location(BaseModel):
     
     Must have ONLY the follwing fields:
         id: int - The ID for the plant in the database.
+        greenhouse_id: int - SQLite GreenhoueID
         plant_id: int - The ID for the plant in the database
         row_number: int - The row number the location is at in the greenhouse
         spot_number: int - The spot number the location is at withen the row
@@ -18,6 +19,7 @@ class Location(BaseModel):
 
 
     id: int = Field(description="SQLite LocationID")
+    greenhouse_id: int = Field(description="SQLite GreenhoueID")
     plant_id: int | None = Field(default=None, description="SQLite plant id")
     row_number: int = Field(description="The row number the location is at in the greenhouse")
     spot_number: int = Field(description="the spot number the location is at withen the row")
