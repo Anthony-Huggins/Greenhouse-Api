@@ -1,6 +1,5 @@
 from pydantic import BaseModel, ConfigDict, EmailStr, Field
 from datetime import datetime
-from typing import Literal
 
 class Caretaker(BaseModel):
     """Pydantic class representing a single caretaker that works at the greenhouse

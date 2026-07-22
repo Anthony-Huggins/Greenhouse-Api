@@ -1,7 +1,6 @@
-from pydantic import BaseModel, ConfigDict, EmailStr, Field
+from pydantic import BaseModel, ConfigDict, Field
 from datetime import datetime
 from typing import Literal
-from models import Status
 
 Care_Types = Literal["watered", "fertilized", "repotted", "pruned", "pest_treatment", "observation"]
 
