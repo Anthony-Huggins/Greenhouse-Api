@@ -2,7 +2,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from datetime import datetime
 
 
-class Location(BaseModel):
+class Greenhouse(BaseModel):
     """Pydantic class representing a single greenhouse
     
     Must have ONLY the follwing fields:
