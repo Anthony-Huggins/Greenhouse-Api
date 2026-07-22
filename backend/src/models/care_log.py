@@ -12,7 +12,7 @@ class Care_Log(BaseModel):
         id: int - The ID for the plant in the database.
         caretaker_id: int - The id of the caretaker that did this care_log 
         care_type: str - type of care. options: ['watered', 'fertilized', 'repotted', 'pruned', 'pest_treatment', 'observation']
-        notes: [str] - Any aditional notes the caretaker has
+        notes: list[str] - Any aditional notes the caretaker has
         date_of_care: datetime - When the care happened (editable)
         created_at: datetime - When this care_log was created
         updated_at: datetime - When this care_log was last updated

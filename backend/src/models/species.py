@@ -26,5 +26,5 @@ class Species(BaseModel):
     common_name: str = Field(max_length=25, description="Common name (what people call it not the offical species name)")
     sunlight_target: int = Field(gt=0, lt=61, description="How much sunlight a species needs per day in DLI")
     watering_interval_target: int = Field(gt=0, lt=11, description="How often this species needs to be wattered per day")
-    created_at: datetime
-    updated_at: datetime
+    created_at: datetime = Field(description="Time when this species was created in the system")
+    updated_at: datetime = Field(description="Time when this species was last updated in the system")

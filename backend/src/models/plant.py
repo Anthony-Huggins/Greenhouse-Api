@@ -22,8 +22,8 @@ class Plant(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
 
-    id: int = Field(description="SQLite SpeciesID")
-    species_id: int = Field(description="SQLite PlantID")
+    id: int = Field(description="SQLite PlantID")
+    species_id: int = Field(description="SQLite SpeciesID")
     nickname: str = Field(default="", max_length=50, min_length="1")
     pot_size: int | None = Field(default=None, description="Pot size in cm")
     acquisiton_date: datetime = Field(description="When this plant was aquired")

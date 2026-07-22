@@ -23,6 +23,6 @@ class Caretaker(BaseModel):
     last_name: str = Field(max_length=50, description="Caretakers Last name")
     email: EmailStr = Field(description="Caretakers Email")
     phone_number: str = Field(pattern=r"^\d{10}$", description="Caretakers phone number")
-    created_at: datetime = Field(description="When this plant was regested in the system")
-    updated_at: datetime = Field(description="When this plant was last updated")
+    created_at: datetime = Field(description="When this caretaker was regested in the system")
+    updated_at: datetime = Field(description="When this caretaker was last updated")
   

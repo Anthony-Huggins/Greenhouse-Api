@@ -9,8 +9,8 @@ class Location(BaseModel):
         id: int - The ID for the greenhouse in the database.
         location_ids: list[int] - List SQLite locationIDs
         name: str - The name of the greenhouse
-        num_rows: int - how many rows for locations this greenhouse has
-        locations_per_row: int - How many pots(locations) can fit in each row in this greenouse
+        num_rows: int - how many rows for locations this greenhouse has (MAX - 6)
+        locations_per_row: int - How many pots(locations) can fit in each row in this greenouse (MAX - 11)
         created_at: datetime - When this greenhouse was created
         updated_at: datetime - When this greenhouse was last updated
     """
